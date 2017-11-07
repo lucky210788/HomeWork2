@@ -17,8 +17,6 @@ Object.defineProperty(figure, "area", {         //добавляем свойс�
 alert(figure.area); // 12
 
 
-
-
 // Decorator
 var word = 'hello';
 
@@ -54,14 +52,15 @@ var person = {
     toString: function () {
         return this.name + ' у Вас ' + this.verdict();
     },
-    toNum: function () {
-        return this.growth.valueOf();
+    valueOf: function (){
+        return this.growth;
+    },
+    toJson: function(){
+        return this.name + this.growth + this.weight;
     }
 };
 
-var toJson = JSON.stringify(person);
-
 person.index();
-alert(person.toString());
-alert(person.toNum());
-alert(toJson);
+alert(String(person));
+alert(Number(person));
+alert(JSON.stringify(person));
