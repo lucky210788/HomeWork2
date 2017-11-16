@@ -56,7 +56,12 @@ var person = {
         return this.growth;
     },
     toJson: function(){
-        return this.name + this.growth + this.weight;
+        return{
+            "name": this.name,
+            "growth": this.growth,
+            "weight": this.weight
+        }
+
     }
 };
 
